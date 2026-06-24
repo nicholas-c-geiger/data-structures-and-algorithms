@@ -6,12 +6,12 @@ class Solution(object):
         """
         left = 0
         right = len(s) - 1
-        
+
         while left < right:
-            while not s[left].isalnum():
+            while left < right and not s[left].isalnum():
                 left += 1
-            
-            while not s[right].isalnum():
+
+            while left < right and not s[right].isalnum():
                 right -= 1
 
             if s[left].lower() != s[right].lower():
@@ -19,5 +19,5 @@ class Solution(object):
 
             left += 1
             right -= 1
-            
+
         return True
